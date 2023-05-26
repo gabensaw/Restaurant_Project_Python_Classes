@@ -1,10 +1,25 @@
-# Assignment
+# Restaurant Table Class
+This repository contains the implementation of the Table class in restaurant.py, which represents tables of diners at a restaurant. The class provides methods for ordering items, removing items, calculating the subtotal and total cost, and splitting the bill.
 
-Complete the `Table` class in `restaurant.py`. It should be able to instantiate objects to represent tables of diners at a restaurant.  When objects are created they are passed in the number of people dining at that table.  The class should have an instance variable called `bill` that is a list.  The class should also contain the following methods:
-- An `order` method that accepts an item and a price.  It should optionally accept a quantity, which should default to 1 if none is provided.  The method should append a menu item to the bill in the form of `{"item": item, "price": price, "quantity": quantity}`.  If the bill already contains an item with the same item name and price, then it should instead update the quantity by adding on the new quantity to the existing quantity.
-- A `remove` method, that is similar to the `order` method but instead subtracts the quantity from the item in the bill with the matching item and price.  If this would reduce the quantity to zero, the item should be removed from the bill entirely.  The method should return `True` unless there is not an item with the corresponding item name and price (or the corresponding item has a quantity less than the quantity desired for removal), in which case it should return `False` and make no change to the bill.
-- A `get_subtotal` method that returns the total cost for the table based on the prices and quantities in the bill.
-- A `get_total` method that accepts a service charge percentage in the form of a decimal.  If no service charge percentage is provided, it should default to 10% (i.e. `0.10`).  This method should return a dictionary with the following keys: `Sub Total`, `Service Charge`, `Total`.  The values should be string representations of the corresponding prices in British pounds and pence.  e.g. `{"Sub Total": "£120.00", "Service Charge": "£12.00", "Total": "£132.00"}`
-- A `split_bill` method, which returns the the subtotal cost of the bill divided by the number of diners as a float rounded up to the nearest penny.
+## Assignment Description
+The Table class has the following requirements:
 
-Author: Gabriel Sawicki
+1. It should instantiate objects representing tables with a given number of diners.
+2. Each table should have an instance variable called bill, which is a list.
+3. The class should include the following methods:
+- `order(item, price, quantity=1)`: Adds a menu item to the bill. If an item with the same name and price already exists in the bill, it updates the quantity.
+- `remove(item, price, quantity)`: Removes the specified quantity of an item from the bill. If the quantity reaches zero, the item is completely removed from the bill.
+- `get_subtotal()`: Returns the total cost for the table based on the prices and quantities in the bill.
+- `get_total(service_charge_percentage=0.10)`: Returns a dictionary with the subtotal, service charge, and total cost. The service charge percentage can be optionally provided.
+- `split_bill()`: Calculates the subtotal cost of the bill divided by the number of diners, rounded up to the nearest penny.
+
+## Usage
+To use the `Table` class:
+
+1. Clone this repository to your local machine.
+2. Open the restaurant.py file and implement the Table class according to the assignment description.
+3. Use the class methods to interact with the table objects, such as ordering items, removing items, and calculating the total cost.
+4. You can test the functionality by running the script or writing test cases.
+
+## Author
+Gabriel Sawicki
